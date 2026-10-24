@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/bmi.png">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1 class="page-title">BMI Calculator</h1>
+        <div class="content-grid">
+            <div class="calculator-card">
+                <div class="unit-tabs">
+                    <button class="tab active-tab">Metric Units</button>
+                </div>
+                <div class="form-body">
+                    <div class="input-group">
+                        <label for="age">Age</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="age">
+                            <span class="unit-label-text range-hint">ages: 2 - 120</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <div class="radio-wrapper">
+                            <label><input type="radio" name="gender" checked> Male</label>
+                            <label><input type="radio" name="gender"> Female</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="height">Height</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="height">
+                            <span class="input-unit">cm</span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="weight">Weight</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="weight">
+                            <span class="input-unit">kg</span>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" id="calculate-btn" onclick="calculateBMI()">Calculate</button>
+                        <button type="button" id="clear-btn" onclick="clearForm()">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card">
+                <div class="result-header">
+                    <span>Result</span>
+                </div>
+                <div class="result-body">
+                    <div id="result-text" class="result-display">
+                        Your BMI is = <span id="bmi-value">20.1</span> kg/m² (<span id="bmi-category"
+                            class="normal-cat">Normal</span>)
+                    </div>
+
+                    <div class="gauge-container">
+                        <div class="gauge-arc">
+                            <div class="gauge-pointer" id="gauge-pointer" style="transform: rotate(-30deg);"></div>
+                        </div>
+                    </div>
+
+                    <ul class="result-details">
+                        <li>Healthy BMI range: 18.5 kg/m² - 25 kg/m²</li>
+                        <li>Healthy weight for the height: <span id="healthy-weight"></span></li>
+                        <li>BMI Prime: <span id="bmi-prime"></span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
